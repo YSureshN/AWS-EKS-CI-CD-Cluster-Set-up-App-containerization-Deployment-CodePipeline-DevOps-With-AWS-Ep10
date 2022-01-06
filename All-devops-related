@@ -1,0 +1,1197 @@
+aws eks describe-cluster --name devel
+
+Saturday, 9 October 2021
+7:32 PM
+
+
+===========================================
+
+Setting up ELK Stack (Elastic Stack) on AWS EC2 instance
+
+https://acpasavarjana.medium.com/setting-up-elk-stack-elastic-stack-on-aws-ec2-instance-fc2e1b006fe3
+
+==========================================================
+
+Gitlab server configuration
+https://www.youtube.com/watch?v=RjYIcLRugUk
+
+https://docs.rackspace.com/support/how-to/install-gitlab-on-ubuntu-18-04/
+
+root@ip-10-50-1-254:/home/ubuntu: gitlab-rake gitlab:env:info
+
+System information and 
+GitLab information
+
+==============================================
+
+aws eks update-kubeconfig --name example
+
+====================================
+
+	Gitlab runner-1
+
+
+sudo gitlab-runner register \
+  --non-interactive \
+  --url "http://ec2-54-227-74-253.compute-1.amazonaws.com" \
+  --registration-token "72X3f67boUFszytnR3oU" \
+  --description "my-runner" \
+  --executor "docker" \
+  --docker-image ubuntu:latest
+
+===================================
+
+
+Gitlab to aws elasticbeanstalk deployment
+
+https://gitlab.com/ivsonv/deploy-netcore-5.0-ebs-aws/-/blob/master/.gitlab-ci.yml
+https://www.youtube.com/watch?v=ygKdGFieaXg
+
+https://gitlab.com/vdespa/www.learndevops.link/-/tree/master
+
+https://gitlab.com/vdespa/www.learndevops.link/-/blob/master/.gitlab-ci.yml
+
+AWS S3 static website hosting + GitLab CI pipeline
+
+
+
+
+Final Project DevOps - GitLab Server & SonarQube integration Demo - Johns Hopkins University     gitlab with sonarqube
+
+==============================
+
+Sonarqube with postgresSQL in AWS
+
+
+psql  --host=mydbinstance.cydf0w17gsjx.us-west-2.rds.amazonaws.com:5432  --port=5432  --username=postgres  --password 
+
+
+/usr/lib/jvm/java-11-openjdk-amd64/bin/java
+
+
+postgresql@9.5-main
+
+sudo passwd postgresql@9.5-main
+http://34.210.9.102:9000
+
+===================================
+
+Sonarqube with postgresSQL in single instance
+
+https://www.youtube.com/watch?v=eKdHTADjQEY
+
+https://www.coachdevops.com/2021/01/install-sonarqube-8-on-ubuntu-how-to.html
+
+====================================
+
+Gitlab Videos
+
+https://www.youtube.com/watch?v=-d81YCn0_OM
+
+
+=========================================
+
+Gitlab server configuration
+
+https://www.youtube.com/watch?v=RjYIcLRugUk
+
+https://docs.rackspace.com/support/how-to/install-gitlab-on-ubuntu-18-04/
+
+==============================================
+
+AWS Elasticsearch Configuration
+
+Ingest Streaming Data into ElasticSearch from S3 | Trigger event notification to Lambda Serverless
+
+
+
+https://github.com/miztiik/serverless-s3-to-elasticsearch-ingester
+
+https://stackoverflow.com/questions/41177965/aws-lambdathe-provided-execution-role-does-not-have-permissions-to-call-describ
+
+https://opensearch.org/docs/latest/security-plugin/access-control/default-action-groups/#index-level
+
+===================================================
+
+How to connect via SSH from AWS CloudShell to EC2 instance
+
+	1. Enter your CloudShell from your browser, just click on the CloudShell icon in the AWS console navigation bar.
+	2. Get your Cloudshell instance IP: launch curl ifconfig.co
+	3. Create or update an Inbound rule for your EC2 instance security group that looks like
+		○ Type: SSH
+		○ Origin: The output from the command at point 1. Something like 3.4.5.6/32.
+		○ As a description I am adding the following: My IP on AWS Cloud Shell (launch curl ifconfig.co)
+	4. Put your SSH key to some private bucket, then use aws s3 cp to copy it to your CloudShell instance.
+	5. Follow the instructions you get when you click on the “Connect” button in your EC2 instance dashboard. For instance you need to run (only once) a chmod 400 on you SSH key, and you also need to know th IP of your EC2 instance.
+
+Aws cloudshell through instance connecting
+
+aws s3 cp s3://hux-devops.com/hux-ssh-keypeir/Hux-Key.pem hux-keypeir
+
+
+Chmod 400 Hux-Key.pem
+
+ssh -i "Hux-Key.pem" ubuntu@ec2-54-186-159-188.us-west-2.compute.amazonaws.com
+
+=================================================
+
+Cloudfront to Private s3 bucket with static website
+
+Deploy static website to AWS with HTTPS - S3, Route 53, CloudFront, Certificate Manager
+
+
+
+AWS Knowledge Center Videos: How Do I Process Amazon CloudFront logs with AWS Elasticsearch Service?
+
+
+
+
+
+================================================
+
+Logs sendig through logstash to Elasticsearch
+
+https://blog.ruanbekker.com/blog/2019/06/04/setup-a-logstash-server-for-amazon-elasticsearch-service-and-auth-with-iam/
+
+https://github.com/drumadrian/Install_Logstash_S3_input_plugin_on_AWS
+
+
+Accessing a Kibana dashboard within a VPC enabled elasticsearch domain
+
+
+
+
+This is very useful for kibana dashboard
+
+https://medium.com/@jeremydaly/how-to-access-your-aws-vpc-based-elasticsearch-cluster-locally-c63cff2400bf
+
+
+cd ~/.ssh/
+
+cd /Home
+
+cd /Users/ysuresh/Downloads/
+
+cd Downloads/
+
+cp Hux-Key.pem /var/root/.ssh
+
+vim config
+
+
+ssh -N estunnel
+
+https://www.jeremydaly.com/access-aws-vpc-based-elasticsearch-cluster-locally/
+
+https://localhost:9200
+
+https://localhost:9200/_plugin/kibana/app/management/kibana/indexPatterns
+
+ES Username and password should provide here & kibana also same Credentionals
+=================================
+
+
+curl "http://localhost:9200
+
+
+========================
+AWS Terraform 
+
+https://registry.terraform.io/providers/hashicorp/aws/latest/docs
+
+==============================
+
+Git global setup
+git config --global user.name "Administrator"
+git config --global user.email "admin@example.com"
+Create a new repository
+git clone git@ec2-35-85-86-239.us-west-2.compute.amazonaws.com:root/serverless-demo-repo.gitcd serverless-demo-repo
+git switch -c main
+touch README.md
+git add README.md
+git commit -m "add README"
+git push -u origin main
+Push an existing folder
+cd existing_folder
+git init --initial-branch=main
+git remote add origin git@ec2-35-85-86-239.us-west-2.compute.amazonaws.com:root/serverless-demo-repo.gitgit add .
+git commit -m "Initial commit"
+git push -u origin main
+Push an existing Git repository
+cd existing_repo
+git remote rename origin old-origin
+git remote add origin git@ec2-35-85-86-239.us-west-2.compute.amazonaws.com:root/serverless-demo-repo.gitgit push -u origin --all
+git push -u origin --tags
+
+https://github.com/mavi888/env-parameters-test/blob/master/service/serverless.yml
+
+https://docs.gitlab.com/ee/user/project/clusters/serverless/aws.html
+
+https://docs.gitlab.com/ee/user/project/clusters/serverless/aws.html
+
+Crafting the .gitlab-ci.yml file
+
+- npm config set prefix /usr/local
+
+- snpm install -g serverless
+
+	- Npm sudo 
+
+
+===============================
+
+Sdfs
+
+git push -u origin --tags
+
+
+Mac Book screen shots ----- Shift+Command+3.   whole screen screen shot
+
+Mac Book screen shots ----- Shift+Command+4.   Certen place screen screen shot
+
+
+https://gitlab.com/meixnertobias/funwitheb.git
+
+http://ec2-35-85-86-239.us-west-2.compute.amazonaws.com/root/funwitheb.git
+
+
+
+============================================
+
+Terraform deployment with github actions
+
+https://github.com/anubhavmishra/terraform-github-actions-demo
+
+
+====================================
+
+ELK steup completely
+
+
+
+Microservices Logging | ELK Stack | Elastic Search | Logstash | Kibana | JavaTechie
+
+
+
+
+It's good
+
+==============
+
+#javatechie #SpringBoot #ELK #Logging #Microservice 
+
+Download ElasticSearch: https://www.elastic.co/downloads/elas... 
+Download Logstash: https://www.elastic.co/downloads/logs... 
+Download Kibana: https://www.elastic.co/downloads/kibana 
+GitHub: https://github.com/Java-Techie-jt/elk... 
+Blogs: https://medium.com/@javatechie
+
+
+======================================
+
+Gitlab to elasticbeanstalk deployment
+
+https://gitlab.com/meixnertobias/funwitheb/-/tree/master/
+
+========================================
+Centralized Logging
+
+https://aws.amazon.com/solutions/implementations/centralized-logging/
+
+https://docs.aws.amazon.com/solutions/latest/centralized-logging/welcome.html
+
+=====================================
+
+https://solutions-reference.s3.amazonaws.com/centralized-logging/latest/aws-centralized-logging.template
+
+https://github.com/awslabs/aws-centralized-logging
+
+https://docs.aws.amazon.com/solutions/latest/centralized-logging/cost.html
+
+
+
+==================================
+
+AWS Centralized Logging
+https://github.com/aws-samples/arc325-multiple-accounts-workshop/blob/master/docs/centralized-logging.md#launch-the-centralized-logging-cloudformation-stack
+
+https://aws.amazon.com/solutions/implementations/centralized-logging/
+
+https://s3.amazonaws.com/solutions-reference/centralized-logging/latest/centralized-logging.pdf
+
+=================================================
+
+https://n.vpn.deloittenet.com
+
+DeloitteNet VPN
+
+=====================
+
+deloitte-huex-us-east-1
+==================
+
+CL-PrimaryStack/CL-Jumpbox/JumpboxEC2
+
+===================
+vpc-00cfb57fa14d4a73c
+subnet-06f27aae9fc3b9951
+
+sg-03611368007e49d81
+
+https://vpc-centralizedlogging-r4c7cnf26qpfakccmn4wadjsbi.us-east-1.es.amazonaws.com
+
+sudo sed -i 's/$domain-endpoint/vpc-centralizedlogging-r4c7cnf26qpfakccmn4wadjsbi.us-east-1.es.amazonaws.com/' /etc/nginx/conf.d/default.conf
+
+Signin (amazoncognito.com)
+
+
+sudo sed -i 's/$cognito_host/centralizedlogging-e12cd2b7-c166-4019-b8d4-76bd6658f838.auth.us-east-1.amazoncognito.com/' /etc/nginx/conf.d/default.conf
+
+http://vpc-centralizedlogging-r4c7cnf26qpfakccmn4wadjsbi.us-east-1.es.amazonaws.com/_dashboards/
+
+https://vpc-centralizedlogging-r4c7cnf26qpfakccmn4wadjsbi.us-east-1.es.amazonaws.com/_dashboards/
+
+ssh -i "deloitte-huex-us-east-1.pem" ec2-user@ec2-54-226-36-242.compute-1.amazonaws.com -N -L 9200:
+
+https://vpc-centralizedlogging-r4c7cnf26qpfakccmn4wadjsbi.us-east-1.es.amazonaws.com
+:443
+ssh -i ~/.ssh/your-key.pem ec2-user@your-ec2-instance-public-ip -N -L 9200:vpc-domain-name.region.es.amazonaws.com:443
+========================
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::286550805531:role/Huex-central-logs-CognitoAuthRole7B7E27C0-1RK06RS2KC08Y"
+      },
+      "Action": [
+        "es:ESHttpGet",
+        "es:ESHttpDelete",
+        "es:ESHttpPut",
+        "es:ESHttpPost",
+        "es:ESHttpHead",
+        "es:ESHttpPatch"
+      ],
+      "Resource": "arn:aws:es:us-east-1:286550805531:domain/centralizedlogging/*"
+    },
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::286550805531:role/Huex-central-logs-FirehoseRoleAA67C190-1JV7976L86CVL"
+      },
+      "Action": [
+        "es:DescribeElasticsearchDomain",
+        "es:DescribeElasticsearchDomains",
+        "es:DescribeElasticsearchDomainConfig",
+        "es:ESHttpPost",
+        "es:ESHttpPut",
+        "es:HttpGet"
+      ],
+      "Resource": "arn:aws:es:us-east-1:286550805531:domain/centralizedlogging/*"
+    }
+  ]
+}
+
+============================
+
+
+ssh -i ~/.ssh/deloitte-huex-us-east-1.pem ec2-user@your-ec2-instance-public-ip -N -L 9200:vpc-centralizedlogging-r4c7cnf26qpfakccmn4wadjsbi.us-east-1.es.amazonaws.com:443
+
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": [
+          "*"
+        ]
+      },
+      "Action": [
+        "es:*"
+      ],
+      "Resource": "arn:aws:es:us-east-1:286550805531:domain/centralizedlogging/*"
+    }
+  ]
+}
+
+========================
+==========================
+
+3.208.198.64
+
+10.0.0.0/16
+
+374502000000008
+
+
+IOBA3745
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::286550805531:role/Huex-central-logs-CognitoAuthRole7B7E27C0-1RK06RS2KC08Y"
+      },
+      "Action": [
+        "es:ESHttpGet",
+        "es:ESHttpDelete",
+        "es:ESHttpPut",
+        "es:ESHttpPost",
+        "es:ESHttpHead",
+        "es:ESHttpPatch"
+      ],
+      "Resource": "arn:aws:es:us-east-1:286550805531:domain/centralizedlogging/*"
+    },
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::286550805531:role/Huex-central-logs-FirehoseRoleAA67C190-1JV7976L86CVL"
+      },
+      "Action": [
+        "es:DescribeElasticsearchDomain",
+        "es:DescribeElasticsearchDomains",
+        "es:DescribeElasticsearchDomainConfig",
+        "es:ESHttpPost",
+        "es:ESHttpPut",
+        "es:HttpGet"
+      ],
+      "Resource": "arn:aws:es:us-east-1:286550805531:domain/centralizedlogging/*"
+    }
+  ]
+}
+====================
+
+Nunna Rajesh	NURAJESH@DELOITTE.COM
+Nishant Rajan	NISHANRANJAN@DELOITTE.COM
+Nandita Sahu	NANSAHU@DELOITTE.COM
+Vaibhav Sharma	VAIBHAVSHARMA34@DELOITTE.COM
+Abhishek G B	ABHGB@DELOITTE.COM
+Dipendra Saini (On break - Dengue) 	DIPESAINI@DELOITTE.COM
+Prakhar Ghatia	PGHATIA@DELOITTE.COM
+Shane Christopher Misquith	SMISQUITH@DELOITTE.COM
+
+
+
+vscode://vscode.github-authentication/did-authenticate?windowid=3&code=2d725d51d6bbad50fc5c&state=5866609d-6906-4cfc-b43b-fc8d26a884c6
+
+arn:aws:iam::286550805531:role/cloudformationservicerole
+
+6382669717
+
+
+=================================
+
+Build a CRUD Serverless API with AWS Lambda, API Gateway and a DynamoDB from Scratch node.js
+
+
+
+===================================
+
+Create a Serverless Backend on AWS with Lambda and Aurora | Step by Step Tutorial python
+
+
+
+
+import json
+import boto3
+rds_client = boto3.client('rds-data')
+database_name = 'serverlessdemo'
+db_cluster_arn = 'arn:aws:rds:us-east-1:286550805531:cluster:auroraserverlessdemo'
+db_credentials_secretes_store_arn = 'arn:aws:secretsmanager:us-east-1:286550805531:secret:rds-db-credentials/cluster-FGFPSQ5U75WXV2WNU7E3N2BVQY/admin-y320Nn'
+def lambda_handler(event, context):
+    response = execute_statement('SELECT * FROM serverlessdemo.Customers');
+    return response;
+def execute_statement(sql):
+    response = rds_client.execute_statement(
+        secretArn=db_credentials_secretes_store_arn,
+        database=database_name,
+        resourceArn=db_cluster_arn,
+        sql=sql
+    )
+    return response;
+
+======================================
+
+AWS Lambda & DynamoDB | AWS Serverless tutorial | Part I
+
+
+
+
+===============================================
+
+AWS CodeCommit, CodeDeploy, CodePipeline in EC2 
+
+AWS CodeCommit, CodeDeploy, CodePipeline
+
+
+
+https://s3.amazonaws.com/aws-codedepl...
+
+
+========================================
+
+buildspec.yml
+
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building the Docker image...          
+      - docker build -t $IMAGE_REPO_NAME:$IMAGE_TAG .
+      - docker tag $IMAGE_REPO_NAME:$IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG      
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Pushing the Docker image...
+      - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
+
+https://docs.aws.amazon.com/codebuild/latest/userguide/sample-docker.html
+1. https://docs.aws.amazon.com/codebuild/latest/userguide/sample-codedeploy.html
+2. https://docs.aws.amazon.com/codebuild/latest/userguide/sample-elastic-beanstalk.html
+
+3. Add the following environment variables:
+• AWS_DEFAULT_REGION with a value of region-ID
+• AWS_ACCOUNT_ID with a value of account-ID
+• IMAGE_TAG with a value of Latest
+• IMAGE_REPO_NAME with a value of Amazon-ECR-repo-name
+
+Appspec.yml
+
+version: 0.0
+os: linux
+files:
+  - source: /index.html
+    destination: /var/www/html/
+hooks:
+  BeforeInstall:
+    - location: scripts/install_dependencies
+      timeout: 300
+      runas: root
+    - location: scripts/start_server
+      timeout: 300
+      runas: root
+  ApplicationStop:
+    - location: scripts/stop_server
+      timeout: 300
+      runas: root
+
+Appspec.yml
+
+https://docs.aws.amazon.com/codedeploy/latest/userguide/application-revisions-appspec-file.html
+
+https://github.com/aws-samples/aws-codedeploy-appspec-assistant. Appspec.yml for ECS, EC2, Lambda
+
+https://docs.aws.amazon.com/codedeploy/latest/userguide/application-revisions-appspec-file.html#add-appspec-file-ecs
+===============================================
+
+Microservices CI/CD With Terraform,  AWS ECS & AWS CI/CD Tools
+
+
+
+https://drive.google.com/file/d/19xtC4yBpHU0GMhnrMyR7dnirsMJzVrV9/view
+https://github.com/sd031/microservice-cicd-project-with-terraform
+======================================
+
+CI/CD With AWS ECS + CodePipeline + CodeCommit + CodeBuild | DevOps With AWS Ep7
+
+
+
+https://github.com/sd031/aws_codebuild_codedeploy_nodeJs_demo
+
+====================================================
+
+Flask to AWS ECS - Part 11: AWS RDS
+
+
+
+https://github.com/alexanderdamiani/aws-ecs-demo
+
+Demo repository for pushing boiler-plate Flask app to AWS ECS.
+===================================================
+
+https://vpc-centralizedlogging-r4c7cnf26qpfakccmn4wadjsbi.us-east-1.es.amazonaws.com/_plugin/kibana/app/kibana
+
+https://vpc-centralizedlogging-r4c7cnf26qpfakccmn4wadjsbi.us-east-1.es.amazonaws.com/_plugin/kibana/app/kibana
+
+
+===============================
+
+https://github.com/aws-samples/aws-lambda-efs-samples
+
+Introduction to using EFS with AWS Lambda
+
+
+
+=================================================
+
+hux-ecs-cluster
+
+Java-Backed-1
+
+javabackend
+
+
+sha256:8862146cb54bfd5da91b5bc5f9dbdf84ea517cd2ca4ee3dd8157b1c52f82e2f5
+
+
+========================================
+
+AWS DevOps CI/CD | CI CD Setup Using CodeBuild CodePipeline ECS | ECS Fargate | CI CD Setup
+
+
+
+AWS DevOps CI/CD | CI CD Setup Using CodeBuild CodePipeline ECS | ECS Fargate | CI CD Setup
+
+CodePipeline --- GitHub --- CodeBuild --- ECS Writing "buildspec.yaml", and triggering CodePipeline when commits are pushed to GitHub. Task Definitions ECS Service ALB Integration Build Docker images using CodeBuild CodePipeline for setting up CI CD Pipeline and deploy to ECS cluster
+
+==========================
+
+286550805531.dkr.ecr.us-east-1.amazonaws.com/huexregistry:V5.0
+
+286550805531.dkr.ecr.us-east-1.amazonaws.com/huexregistry:latest
+286550805531.dkr.ecr.us-east-1.amazonaws.com/huexregistry:latest
+
+
+====================================================
+
+CICD using AWS CodePipeline and Elastic Bean Stalk | DevOps | Tech Primers
+
+
+
+https://github.com/TechPrimers/aws-beanstalk-example-2
+
+=========================================
+
+Create users,Roles and Privileges for ELK|ELK Stack on Windows 10
+
+
+
+how to add new users, create roles, and set privileges using the Elastic Stack
+
+=============================
+https://github.com/dyordsabuzo/pablosspot/blob/main/ep-07-setting-static-website/mywebsite/main.tf
+AWS & Terraform: Setting up Website using Cloudfront and S3 Bucket
+
+
+
+
+https://github.com/dyordsabuzo/pablosspot/blob/main/ep-07-setting-static-website/mywebsite/main.tf
+
+=================================================
+
+https://github.com/dyordsabuzo/pablosspot  ( aws terraform code for all resources )
+
+=====================================================
+
+
+https://github.com/deviantony/docker-elk/tree/main/elasticsearch
+
+Install ELK (Elasticsearch, Logstash and Kibana) using Docker and Docker-compose
+
+
+
+Elastic stack (ELK) on Docker
+https://github.com/deviantony/docker-elk 
+
+https://www.robertobandini.it/2021/01/31/how-to-install-the-elk-stack-using-docker-compose/
+=========================
+
+Thumbprint
+a031c46782e6e6c662c2c87c76da9aa62ccabd8e
+Issued by
+DigiCert Inc
+CA validity
+From 10/22/2013 to 10/22/2028
+==============
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "Federated": "arn:aws:iam::286550805531:oidc-provider/token.actions.githubusercontent.com"
+      },
+      "Action": "sts:AssumeRoleWithWebIdentity",
+      "Condition": {
+        "StringEquals": {
+          "token.actions.githubusercontent.com:aud": "ts.amazonaws.com"
+        }
+      }
+    }
+  ]
+}
+=======================
+All HU Deployment Solution w.r.t DevOps Activities	Azure	Denzil Xavier Dias 	DXAVIERDIAS@DELOITTE.COM	Vijay chatakonda - cvijaykumar@deloitte.com, Dhanista Vardhan - ddhanistavardhan@deloitte.com, Suresh, Yerraguntla - ysuresh@deloitte.com
+		Muruguraj T 	MURUGT@DELOITTE.COM	
+		Himanshu Jangid 	HJANGID@DELOITTE.COM	
+		Dennis Babu 	DEBABU@DELOITTE.COM	
+				
+
+========================
+
+AWS Single Sign-On (SSO) - AWS Solutions Architect Associate Exam Training
+
+
+
+Aws sso with provide identity and Azure AD.
+
+===========================
+
+GitHub Actions Tutorial | From Zero to Hero in 90 minutes (Environments, Secrets, Runners, etc)
+
+
+
+=============================
+
+Container Security: Container Vulnerability Scanning with Snyk
+
+Docker build -t hello-tomcat .
+Snyk container test  hello-tomcat --file=dockerfile
+
+
+Docker build -t hello-tomcat .
+Docker scan hello-tomcat --file=dockerfile
+==========================
+
+AWS App Runner Explained | Overview and Console Walkthrough
+
+
+
+https://github.com/beabetterdevv/FargateECSAppWithLoadbalancer
+
+===============================================
+Multi Stage Docker Builds | Java/SpringBoot Example | Tech Primers
+
+
+
+https://github.com/TechPrimers/multi-stage-example/blob/master/Dockerfile
+
+Multi Stage Docker Builds | Java/SpringBoot Example | Tech Primers
+AWS: Deploy a multi-container docker application to AWS ECS using CI/CD pipeline (Part-1)
+https://github.com/softwarebhayya/docker-loginapp 
+===================
+
+https://github.com/TechPrimers/multi-stage-example/blob/master/Dockerfile. (Maven dockerfile)
+https://github.com/beabetterdevv/FargateECSAppWithLoadbalancer (Python Dockerfile)
+
+=====================================
+git remote set-url origin vscode://vscode.github-authentication/did-authenticate?windowid=4&code=b180e38923fc40040152&state=03875e20-d2ab-4d01-84ea-f68592c33313
+
+
+https://www.youtube.com/watch?v=wICHpxCZSag
+
+AWS IaC with Terraform | Github Actions Setup.
+
+========================
+
+Automate SonarCloud code scans using GitHub Actions
+
+
+
+Automate SonarCloud code scans using GitHub Actions
+==================================================
+
+How to Deploy WebApp with AWS App Runner
+
+
+
+How to Deploy WebApp with AWS App Runner
+
+===========================
+
+[Backend #27] Auto build & push docker image to AWS ECR with Github Actions
+
+
+
+Auto build & push docker image to AWS ECR with Github Actions. (github actions to EKS)
+==============================
+754469564153.dkr.ecr.us-east-1.amazonaws.com/hbs-huex-devops:latest
+
+
+    - name: Login to Amazon ECR
+      id: login-ecr
+      uses: aws-actions/amazon-ecr-login@v1
+
+    - name: Build, tag, and push image to Amazon ECR
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        ECR_REPOSITORY: my-ecr-repo
+        IMAGE_TAG: ${{ github.sha }}
+      run: |
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+
+
+EC2-to-ECR-for-Github-Actions aws iam role for github actions
+
+167.219.0.0/16    aws vpn Ip range
+
+yum install -y perl-Digest-SHA.  ( github runner shahon)
+
+==============
+Installing the service
+	1. Stop the self-hosted runner application if it is currently running.
+	2. Install the service with the following command:
+	sudo ./svc.sh install
+Starting the service
+Start the service with the following command:
+sudo ./svc.sh start
+
+====================
+
+uqwhenpguj.us-east-1.awsapprunner.com
+
+
+
+FROM maven:3.8-jdk-11 as builder
+WORKDIR /app
+COPY pom.xml .
+COPY src ./src
+COPY . .
+RUN mvn clean test
+RUN mvn jacoco:report
+RUN mvn package
+RUN mvn sonar:sonar -Dsonar.qualitygate.wait=true -Dsonar.host.url=https://sonarqube.hashedin.com  -Dsonar.login=d1ea23af55cf08657d16804b7e7c9868b3f0c7ea
+
+FROM openjdk:11
+EXPOSE 8080
+COPY --from=builder /app/target/*.jar /app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
+
+
+https://www.edureka.co/community/68431/docker-permission-connect-socket-connect-permission-denied
+
+----------------------------------
+https://github.com/awslabs/amazon-app-runner-deploy.  Github action to aws apprunner
+
+ec2.amazonaws.com
+
+https://aws.amazon.com/blogs/containers/deploy-applications-in-aws-app-runner-with-github-actions/
+
+Deploy applications in AWS App Runner with GitHub Actions
+
+https://github.com/awslabs/amazon-app-runner-deploy. source code based 
+https://github.com/awslabs/amazon-app-runner-deploy
+
+Deploy static website to S3 using Github actions
+
+https://dev.to/johnkevinlosito/deploy-static-website-to-s3-using-github-actions-4a0e
+
+----------------------------------------------------------
+Configuring a static website on Amazon S3
+
+https://docs.aws.amazon.com/AmazonS3/latest/userguide/HostingWebsiteOnS3Setup.html
+
+In this url s3 bucket minimal permitions
+
+-----------------------------------------------------------
+Deploy To Google Cloud Run Using Github Actions
+https://towardsdatascience.com/deploy-to-google-cloud-run-using-github-actions-590ecf957af0
+
+https://github.com/google-github-actions/deploy-cloudrun
+
+-------------------------------------------------------
+
+https://github.com/saiyam1814/cloudrundemos
+
+Google Cloud Run with Github Actions
+
+
+
+
+Google Cloud Run with Github Actions
+
+https://github.com/google-github-actions/setup-gcloud/tree/master/example-workflows/cloud-run
+
+How to create and setup document this
+
+https://console.cloud.google.com/home/dashboard?project=us-gcp-ame-con-116-npd-1  HBS GCP account URL
+
+-------------------------------------------
+
+https://aws.amazon.com/blogs/security/integrating-aws-cloudformation-security-tests-with-aws-security-hub-and-aws-codebuild-reports/
+
+95d520666801431182dbc6e8234e2caa
+
+https://github.com/saha-rajdeep/cloudformation-demo   aws cloudformation
+https://www.youtube.com/watch?v=9hqbzuN--sk. 
+
+Aws cloudformation setus with github
+
+
+===============AWS=======EKS=============
+
+AWS EKS CI/CD: Cluster Set-up, App containerization & Deployment, CodePipeline| DevOps With AWS Ep10
+
+
+
+
+AWS EKS CI/CD: Cluster Set-up, App containerization & Deployment, CodePipeline| DevOps With AWS Ep10
+
+https://drive.google.com/file/d/1kVj-tpz2qmRwcsXmkn3Soe5LsMhwBfyl/view
+
+https://github.com/sd031/aws_codebuild_codedeploy_nodeJs_demo
+
+==========================================================
+
+CloudFormation:
+	• https://stackoverflow.com/a/45007029/3019499
+	• https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/walkthrough-custom-resources-lambda-lookup-amiids.html
+	• https://github.com/awslabs/aws-cloudformation-templates/tree/master/aws/solutions/lambda-backed-cloudformation-custom-resources/Fetch-AMI-From-Parameter-Store
+	• https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#w2ab1c15c15c17c11
+	• https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed
+	• https://aws.amazon.com/blogs/devops/continue-rolling-back-an-update-for-aws-cloudformation-stacks-in-the-update_rollback_failed-state/
+	• https://stackoverflow.com/a/41468341/3019499
+	• https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStack.html#API_CreateStack_RequestParameters
+	• https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-capabilities
+	• https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html
+Beanstalk
+	• https://github.com/aws/aws-elastic-beanstalk-cli-setup
+	• https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install-advanced.html
+	• https://aws.amazon.com/blogs/devops/using-the-elastic-beanstalk-eb-cli-to-create-manage-and-share-environment-configuration/
+	• https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options-general.html#command-options-general-autoscalingasg
+	• https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/ebextensions-optionsettings.html
+	• https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-resources.html
+	• https://stackoverflow.com/a/40096352/3019499
+	• https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create_deploy_docker_v2config.html
+Lambda:
+	• https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html
+	• https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/automating-updates-to-serverless-apps.html
+Step Functions
+	• https://aws.amazon.com/step-functions/use-cases/
+API Gateway
+	• https://aws.amazon.com/blogs/compute/introducing-amazon-api-gateway-private-endpoints/
+	• https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-request-throttling.html
+	• https://docs.aws.amazon.com/step-functions/latest/dg/tutorial-api-gateway.html
+
+ECS
+	• https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-auto-scaling.html
+	• https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html
+	• https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_cloudwatch_logs.html
+	• https://ecsworkshop.com/introduction/cicd/
+	• https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-cd-pipeline.html
+	• https://docs.aws.amazon.com/codepipeline/latest/userguide/tutorials-ecs-ecr-codedeploy.html
+	• https://aws.amazon.com/blogs/devops/build-a-continuous-delivery-pipeline-for-your-container-images-with-amazon-ecr-as-source/
+
+Opsworks
+	• https://docs.aws.amazon.com/opsworks/latest/userguide/welcome_classic.html
+	• https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-events.html
+	• https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json.html
+===============================================================
+
+AWS Ec2 Cloudwatch alaram for storage
+
+https://marbot.io/blog/monitoring-ec2-disk-usage.html
+
+https://devops-fu.org/2019/03/18/how-to-install-and-configure-aws-cloudwatch-agent-on-ubuntu/
+
+https://stackoverflow.com/questions/22462716/remove-log-files-using-cron-job/22462788
+================================================================
+
+
+AWS CLOUDFROMATION TEMPLATES FOR ALL RESOURCES
+
+https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/quickref-cloudfront.html
+
+==================================================================
+
+Using Amazon EFS (Elastic File System) with AWS Lambda
+
+
+
+Using Amazon EFS (Elastic File System) with AWS Lambda
+
+===========================
+https://s3.amazonaws.com/cloudformation-templates-us-east-1/LAMP_Single_Instance.template
+
+Cloudformation for ec2 webserver and rds mysql database
+
+=======================================================
+
+AWS re:Invent 2020: Amazon Location Service: Enable apps with location features
+
+
+
+Amazon Location Service: Enable apps with location features
+
+
+Amazon Pinpoint Full Demo - (User Segments & Journeys)
+
+
+
+Amazon Pinpoint Full Demo
+
+Creating Your First AWS AppSync GraphQL API
+
+
+
+Creating Your First AWS AppSync GraphQL API
+
+========================
+This is for MSK means Apache Kafka
+https://solutions-reference.s3.amazonaws.com/aws-streaming-data-solution-for-amazon-msk/latest/aws-streaming-data-solution-for-msk-using-aws-lambda.template
+
+https://solutions-reference.s3.amazonaws.com/aws-streaming-data-solution-for-amazon-msk/latest/aws-streaming-data-solution-for-msk.template
+
+https://solutions-reference.s3.amazonaws.com/aws-streaming-data-solution-for-amazon-msk/latest/aws-streaming-data-solution-for-msk-using-aws-lambda-and-kinesis-data-firehose.template
+
+https://solutions-reference.s3.amazonaws.com/aws-streaming-data-solution-for-amazon-msk/latest/aws-streaming-data-solution-for-msk-using-kinesis-data-analytics-and-amazon-s3.template
+
+===================================================
+
+https://github.com/mavi888/drop-the-box-demo
+
+Aws Amplify project 
+
+https://github.com/awslabs/location-based-notifications-using-amazon-pinpoint/blob/main/deployment/location-based-notifications-using-amazon-pinpoint.template
+====================================================
+https://github.com/amazon-archives/aws-appsync-rds-aurora-sample/blob/master/src/appsyncrdslambdasampletemplate.yaml. Aws appsync complete
+
+https://github.com/aws-samples/aws-dms-msk-demo/blob/master/content/cfn/master-cfn.yaml
+We have moore information about MSK
+====================================================
+Aws lambda , s3, API Gateway and end URL
+
+https://github.com/calwas/aws-lambda-cloudformation
+
+====================================================
+Real-Time Web Analytics with Kinesis Data Analytics  EC2,ELB,ASG,Kenisis, all with cloudformation
+And S3 with Cloudfront also here
+https://github.com/aws-solutions/real-time-web-analytics-with-kinesis/blob/main/deployment/real-time-web-analytics-with-kinesis.yaml
+
+Aws kenisis with autoscaling
+https://github.com/aws-solutions/real-time-web-analytics-with-kinesis/tree/main/deployment
+
+=========================
+Aws lambda function with cloudformation
+https://github.com/calwas/aws-lambda-cloudformation/blob/master/CreateLambdaFunction.yaml
+
+============================
+Aws eks with autoscaling cloudformation YAML
+https://github.com/aws-samples/amazon-eks-refarch-cloudformation
+
+=======================
+Aws microsoft sql server with cloudformation
+https://github.com/aws-samples/dba-automation-scripts/blob/master/cloudformation-sqlserver-master-database.yaml
+
+--------------------------------------
+Aws RDS with VPC, Subnet, Private Route, EIP, with cloudformation
+
+https://github.com/amazon-archives/aws-appsync-rds-aurora-sample/blob/master/src/appsyncrdslambdasampletemplate.yaml
+
+=====================================
+Aws kafka in ECS with cloudformation and ECS Tasdefination and Service
+https://github.com/on-aws/kafka
+
+===========================
+AWS Kafks with Cloudformation
+https://github.com/aws-samples/cloudformation-quickstart-with-amazonmsk-snowflake/blob/master/msk_latest.yaml
+
+========================================
+AWS Lambda, API with cloudformation
+https://github.com/calwas/aws-lambda-cloudformation/blob/master/CreateLambdaFunction.yaml
+
+=========================================
+All cloudformation Template files
+
+https://s3.amazonaws.com/cloudformation-templates-us-east-1/LAMP_Single_Instance.template
+https://github.com/aws-solutions/aws-centralized-logging
+https://github.com/amazon-archives/aws-appsync-rds-aurora-sample
+https://github.com/aws-samples/amazon-location-safety-tracker
+https://github.com/awslabs/location-based-notifications-using-amazon-pinpoint/tree/main/deployment
+https://github.com/mavi888/drop-the-box-demo
+https://github.com/aws-samples/reactive-refarch-cloudformation/tree/master/services
+https://github.com/on-aws/kafka/blob/main/kafka.yaml
+https://github.com/amazon-archives/aws-big-data-blog/blob/master/aws-blog-sparkstreaming-from-kafka/cloudformation/SetupKafka-AWS-PrivateSubnets.json
+https://github.com/amazon-archives/aws-big-data-blog/blob/master/aws-blog-sparkstreaming-from-kafka/cloudformation/SetupKafka-AWS-PrivateSubnets.json
+https://github.com/amazon-archives/aws-big-data-blog/blob/master/aws-blog-sparkstreaming-from-kafka/cloudformation/SetupKafka-AWS-PrivateSubnets.json
+https://github.com/aws-samples/cloudformation-quickstart-with-amazonmsk-snowflake/blob/master/msk_latest.yaml
+https://github.com/aws-samples/amazon-eventbridge-freshdesk-example/blob/main/template.yaml
+https://github.com/aws-quickstart/quickstart-amazon-eks/blob/main/templates/amazon-eks-load-balancer-controller.template.yaml
+https://github.com/weibeld/eks-cloudformation
+https://github.com/chgangaraju/terraform-aws-cloudfront-s3-website
+https://github.com/aws-samples/amazon-cloudfront-secure-static-site
+https://github.com/aws-samples/amazon-eks-refarch-cloudformation/blob/main/cloudformation/nodegroup.yaml
+https://github.com/stelligent/cloudformation_templates/blob/master/database/mysql-rds.yml
+https://github.com/amazon-archives/aws-appsync-rds-aurora-sample/blob/master/src/appsyncrdslambdasampletemplate.yaml
+https://github.com/aws-samples/dba-automation-scripts
+https://github.com/aws-quickstart/quickstart-amazon-eks/blob/main/templates/amazon-eks-load-balancer-controller.template.yaml
+https://github.com/aws-samples/aws-dms-msk-demo/blob/master/content/cfn/master-cfn.yaml
+https://github.com/calwas/aws-lambda-cloudformation
+https://github.com/aws-solutions/real-time-web-analytics-with-kinesis/blob/main/deployment/real-time-web-analytics-with-kinesis-existing-vpc.yaml
+https://github.com/aws-samples/amazon-eks-refarch-cloudformation/blob/main/cloudformation/nodegroup.yaml
+
+=========================================
+
+Aws ecr , lambda+Image container with trigers for event bridge cloudformation YAML
+https://github.com/alexanderdamiani/aws-lambda-demo/tree/main/aws_templates
+
+=========================================
+
+https://gist.github.com/shortjared/4c1e3fe52bdfa47522cfe5b41e5d6f22
+
+List of AWS Service Principals.  Like eks.amazonaws.com for all 
+
+=============================
+Using Amazon MSK as an event source for AWS Lambda
+https://aws.amazon.com/blogs/compute/using-amazon-msk-as-an-event-source-for-aws-lambda/
+
+==============================
+The Lambda function target in the event source mapping does not need to be running in a VPC to receive messages from Amazon MSK. To learn more about configuring the private subnet table to use a NAT Gateway, see this
+https://github.com/awsdocs/aws-lambda-developer-guide/blob/master/templates/vpc-privatepublic.yaml
+
+
+===========================
+Aws cloudformation for MSK
+https://amazonmsk-labs.workshop.aws/en/msklambda/gsrschemareg/setup.html
+
+===========================
+
+
+
+https://github.com/seeebiii/aws-cloudformation-templates/blob/master/AWS-Lambda-Register-To-Kinesis/cfn.yml
+
+Examples for AWS CloudFormation templates. Currently focused on templates for AWS Serverless Application Model (SAM).
+
+===============================
+AWS Cloudformations with IAM Roles
+https://cloudkatha.com/how-to-create-iam-role-using-cloudformation/
+
+https://github.com/awsdocs/aws-cloudformation-user-guide/blob/main/doc_source/aws-resource-iam-managedpolicy.md
+
+==============================
+When I try to use the Kafka-Kinesis-Connector to connect with Amazon Managed Streaming for Apache Kafka (Amazon MSK), I receive an error message. How do I connect to my Amazon MSK cluster using the Kafka-Kinesis-Connector?
+
+https://aws.amazon.com/premiumsupport/knowledge-center/kinesis-kafka-connector-msk/
+https://aws.amazon.com/premiumsupport/knowledge-center/kinesis-kafka-connector-msk/
+===============================
+https://github.com/awslabs/kinesis-kafka-connector
+
+	The Kafka-Kinesis-Connector is a connector to be used with Kafka Connect to publish messages from Kafka to Amazon Kinesis Streams or Amazon Kinesis Firehose.
+	
+=====================================
+https://github.com/alexanderdamiani/aws-lambda-demo/blob/main/aws_templates/lambda_cloudformation_template.yaml
+https://github.com/aws-quickstart/eventbridge-integration-solution-aws-lambda/blob/main/template.yaml
+
+Event Bridge to Lambda Integration
+=======================================
+
+https://github.com/felixyu9/github-to-lambda-demo
+
+where I talk about how to automatically update aws lambda function code using CodeBuild (i.e., CI/CD of AWS Lambda Deployment).
+
+Buildspec to lambda autometically python application
+---------------------------------------------------
