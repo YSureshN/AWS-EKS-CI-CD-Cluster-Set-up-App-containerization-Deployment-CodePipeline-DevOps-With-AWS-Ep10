@@ -11,11 +11,25 @@ def index_handler(event, context):
     pipeline_status = message_dict["detail"]["state"]
     execution_id = message_dict["detail"]["execution-id"]
     text = f"Code Pipeline: {pipeline_name} with execution-id {execution_id} has: {pipeline_status}."
-    title = "[Red Alert] - Code Deployment Failed"
+    aws_account_id = message_dict['account']
+    aws_region = message_dict['region']
+    color = '#808080'
+    if pipeline_status=="SUCCEEDED" : 
+        title = "[Green Alert] - Code Pipeline Success"
+        color = '#00ff00'
+    elif pipeline_status== "STARTED" : 
+        title = "[Yellow Alert] - Code Pipeline Started"
+        color = '#00bbff'
+    elif pipeline_status== "FAILED" : 
+        title = "[Red Alert] - Code Pipeline Failed"
+        color = '#ff0000'
+    
+    #pipeline_url = f'''https://console.aws.amazon.com/codesuite/codepipeline/pipelines/{pipeline_name}/view?region={aws_region}'''
+    
     msg = {
         "@context": "https://schema.org/extensions",
         "@type": "MessageCard",
-        "themeColor": "d63333",
+        "themeColor": color,
         "text": text,
         "title": title,
         "sections": [{
@@ -31,6 +45,7 @@ def index_handler(event, context):
             }],
             "markdown": True
         }]
+        
     }
     encoded_msg = json.dumps(msg).encode('utf-8')
     resp = http.request('POST', url, body=encoded_msg)
