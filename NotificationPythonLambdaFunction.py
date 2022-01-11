@@ -54,13 +54,13 @@ def index_handler(event, context):
         "status_code": resp.status,
         "response": resp.data
     })
-    message = {
-        "mailContentType": "text",
-        "mailBody": text,
-        "mailSubject": title,
-        "toAddresses": os.environ["EMAIL_LIST"]
-    }
-    boto3.client("sns").publish(
-        TargetArn=os.environ["SNS_TOPIC"],
-        Message=json.dumps(message),
-    )
+#     message = {
+#         "mailContentType": "text",
+#         "mailBody": text,
+#         "mailSubject": title,
+#         "toAddresses": os.environ["EMAIL_LIST"]
+#     }
+#     boto3.client("sns").publish(
+#         TargetArn=os.environ["SNS_TOPIC"],
+#         Message=json.dumps(message),
+#     )
