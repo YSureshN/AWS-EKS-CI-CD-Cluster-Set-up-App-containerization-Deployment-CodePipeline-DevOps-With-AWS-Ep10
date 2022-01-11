@@ -24,7 +24,7 @@ def index_handler(event, context):
         title = "[Red Alert] - Code Pipeline Failed"
         color = '#ff0000'
     
-    #pipeline_url = f'''https://console.aws.amazon.com/codesuite/codepipeline/pipelines/{pipeline_name}/view?region={aws_region}'''
+    pipeline_url = f'''https://console.aws.amazon.com/codesuite/codepipeline/pipelines/{pipeline_name}/view?region={aws_region}'''
     
     msg = {
         "@context": "https://schema.org/extensions",
@@ -44,7 +44,17 @@ def index_handler(event, context):
                 "value": f"{pipeline_status}"
             }],
             "markdown": True
-        }]
+        }],
+        "potentialAction": [{
+                    
+            "@type": "OpenUri",
+            "name": "Approve",
+            "targets": [{
+                "os": "default",
+                "uri": pipeline_url
+            }]
+        }
+        ]
         
     }
     encoded_msg = json.dumps(msg).encode('utf-8')
