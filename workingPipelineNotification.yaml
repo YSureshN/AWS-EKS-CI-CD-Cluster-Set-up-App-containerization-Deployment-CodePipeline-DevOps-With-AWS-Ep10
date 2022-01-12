@@ -45,11 +45,11 @@ Resources:
                 pipeline_name = message_dict["detail"]["pipeline"]
                 pipeline_status = message_dict["detail"]["state"]
                 execution_id = message_dict["detail"]["execution-id"]
-                text = f"Code Pipeline: {pipeline_name} with execution-id {execution_id} has: {pipeline_status}."
+                # text = f"Code Pipeline: {pipeline_name} with execution-id {execution_id} has: {pipeline_status}."
                 aws_account_id = message_dict['account']
                 aws_region = message_dict['region']
                 event_time = sts_val['ResponseMetadata']['HTTPHeaders']['date']
-                #event_time = datetime.now().isoformat(timespec='seconds')
+                # event_time = datetime.now().isoformat(timespec='seconds')
                 color = '#808080'
                 if pipeline_status=="SUCCEEDED" : 
                     title = "[Green Alert] - Code Pipeline Success"
@@ -78,7 +78,7 @@ Resources:
                     "@context": "https://schema.org/extensions",
                     "@type": "MessageCard",
                     "themeColor": color,
-                    "text": text,
+                    "text": "Herc Rentals",
                     "title": title,
                     "sections": [{
                         "facts": [{
@@ -135,7 +135,6 @@ Resources:
             #         Message=json.dumps(message),
             #     )
 
-    
       MemorySize: 128
       Environment:
         Variables:
