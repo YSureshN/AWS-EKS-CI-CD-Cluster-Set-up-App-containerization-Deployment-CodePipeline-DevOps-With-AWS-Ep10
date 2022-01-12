@@ -48,7 +48,8 @@ Resources:
                 text = f"Code Pipeline: {pipeline_name} with execution-id {execution_id} has: {pipeline_status}."
                 aws_account_id = message_dict['account']
                 aws_region = message_dict['region']
-                event_time = datetime.now().isoformat(timespec='seconds')
+                event_time = sts_val['ResponseMetadata']['HTTPHeaders']['date']
+                #event_time = datetime.now().isoformat(timespec='seconds')
                 color = '#808080'
                 if pipeline_status=="SUCCEEDED" : 
                     title = "[Green Alert] - Code Pipeline Success"
