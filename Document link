@@ -6,3 +6,13 @@ https://www.youtube.com/watch?v=nEK7e0QUVio
 github-to-lambda-demo
 
 https://github.com/felixyu9/github-to-lambda-demo
+
+
+=======================
+
+This solution allows you to create a AWS Codepipline for deploying a serverless application with AWS CodeBuild triggered by a Github 
+repo commit. The setup of this solution is fully automated via a CloudFormation template.
+
+https://github.com/getcft/aws-serverless-code-pipeline-cf-template/blob/master/serverless-code-pipeline-cf-template.yml
+
+======================
